@@ -3,88 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ragil Muhamad Ramadhan - Portfolio</title>
+    <title>Ragil Muhamad Ramadhan | Data Analyst Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS Styling */
+        /* Modern CSS Styling */
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #34495e;
-            --accent-color: #3498db;
-            --bg-color: #f4f7f6;
-            --text-color: #333;
+            --primary: #0f172a;
+            --secondary: #334155;
+            --accent: #2563eb;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #334155;
+            --text-light: #64748b;
         }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            line-height: 1.7;
             margin: 0;
-            padding: 0;
+            padding: 40px 20px;
         }
+
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
         }
+
+        /* Header Section */
         header {
             text-align: center;
-            padding: 40px 0;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 8px;
-            margin-bottom: 20px;
+            margin-bottom: 50px;
         }
         header h1 {
+            color: var(--primary);
+            font-size: 2.8em;
+            font-weight: 700;
             margin: 0;
-            font-size: 2.5em;
+            letter-spacing: -1px;
         }
         header p {
-            margin: 5px 0 0;
+            color: var(--text-light);
             font-size: 1.1em;
-            color: #ecf0f1;
+            margin-top: 10px;
         }
+        .contact-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 10px;
+        }
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Card Sections */
         section {
-            background: white;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: var(--bg-card);
+            padding: 35px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            margin-bottom: 30px;
+            border-top: 4px solid transparent;
+            transition: transform 0.2s ease;
         }
+        section:hover {
+            border-top: 4px solid var(--accent);
+        }
+
         h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 5px;
+            color: var(--primary);
+            font-size: 1.5em;
+            font-weight: 700;
             margin-top: 0;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 10px;
         }
+
         h3 {
-            color: var(--secondary-color);
-            margin-bottom: 5px;
+            color: var(--primary);
+            font-size: 1.2em;
+            margin: 20px 0 5px 0;
         }
+
         .date {
-            font-style: italic;
-            color: #7f8c8d;
             font-size: 0.9em;
-            margin-bottom: 10px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-weight: 600;
         }
+
         ul {
             padding-left: 20px;
+            margin-bottom: 0;
         }
+
         li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
-        .skills-list {
+
+        /* Project Layout with Image */
+        .project-card {
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+        .project-content {
+            flex: 1;
+        }
+        .project-image {
+            flex: 0 0 35%;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .project-image img {
+            width: 100%;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .project-image:hover img {
+            transform: scale(1.05);
+        }
+        .project-image a {
+            display: block;
+            position: relative;
+        }
+        .image-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 23, 42, 0.7);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-weight: 600;
+            text-align: center;
+            padding: 10px;
+        }
+        .project-image a:hover .image-overlay {
+            opacity: 1;
+        }
+        .impact-text {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 10px 15px;
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+
+        /* Tools & Skills Grid */
+        .tools-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            list-style: none;
-            padding: 0;
+            gap: 15px;
+            margin-top: 15px;
         }
-        .skills-list li {
-            background: var(--accent-color);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
+        .tool-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--bg-body);
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            font-weight: 600;
+            color: var(--secondary);
+            transition: background 0.2s ease;
+        }
+        .tool-item:hover {
+            background: #e2e8f0;
+        }
+        .tool-item img {
+            height: 24px;
+            width: auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .project-card {
+                flex-direction: column;
+            }
+            .project-image {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -92,81 +202,99 @@
 
 <div class="container">
     <header>
-        <h1>Ragil Muhamad Ramadhan [cite: 2]</h1>
-        <p>📍 Kabupaten Tangerang [cite: 3] | 📧 ragilmuhammad.ramadhan48@gmail.com [cite: 3] | 📞 0851-5700-1790 [cite: 3]</p>
+        <h1>Ragil Muhamad Ramadhan</h1>
+        <p>Data Analyst | Computer Science Graduate</p>
+        <div class="contact-links">
+            <span style="color: var(--text-light)">📍 Kabupaten Tangerang</span> | 
+            <a href="mailto:ragilmuhammad.ramadhan48@gmail.com">Email Me</a> | 
+            <span style="color: var(--text-light)">📞 0851-5700-1790</span>
+        </div>
     </header>
 
     <section>
-        <h2>👨‍💻 About Me</h2>
-        <p>I am a Data Analyst and Computer Science graduate from Universitas Multimedia Nusantara[cite: 6]. I have hands-on experience in full-stack data analytics, database optimization, and machine learning development. I am passionate about transforming complex data into actionable business recommendations and building efficient digital systems[cite: 14].</p>
+        <h2>About Me</h2>
+        <p>I am a Data Analyst and Computer Science graduate from Universitas Multimedia Nusantara. I have hands-on experience in full-stack data analytics, database optimization, and machine learning development. I am passionate about transforming complex data into actionable business recommendations and building efficient digital systems.</p>
     </section>
 
     <section>
-        <h2>💼 Working Experiences</h2>
+        <h2>Project Experiences</h2>
         
-        <h3>Programmer Intern | PT. Sanken Argadwija [cite: 20]</h3>
-        <p class="date">December 2025 - Present [cite: 21]</p>
+        <h3>Supply Chain Delivery Optimization: Reducing Late Risk</h3>
+        <p class="date">January 2026 - February 2026</p>
+        
+        <div class="project-card">
+            <div class="project-content">
+                <p><strong>Context:</strong> DataCo faced a critical 54.83% Late Delivery Rate (LDR), threatening $3.2 Million in revenue across global operations.</p>
+                <p><strong>Action / Analysis:</strong> Utilized Python for data cleaning and Tableau for EDA. Discovered that the delay was a systemic issue uniform across all regions and products. The root cause was an unrealistic SLA target in the system promising 1-2 days delivery for "Premium" services, while actual physical logistics optimally required 4 days.</p>
+                <p><strong>Result:</strong> Generated a Zero-Cost recommendation to recalibrate SLA promises according to operational realities.</p>
+                
+                <div class="impact-text">
+                    <strong>Business Impact:</strong> Projected to drastically reduce the Late Delivery Rate from 54.83% to < 20% overnight.
+                </div>
+            </div>
+            
+            <div class="project-image">
+                <a href="https://docs.google.com/presentation/d/12sXB5HHAwQcXgAS5trCh_9t0ZbDqxQD1RA9_0dPOME4/edit?usp=sharing" target="_blank">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Supply Chain Dashboard Screenshot">
+                    <div class="image-overlay">Click to view Full Presentation & Dashboard</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Working Experiences</h2>
+        
+        <h3>Programmer Intern | PT. Sanken Argadwija</h3>
+        <p class="date">December 2025 - Present</p>
         <ul>
-            <li>Learned and applied the CodeIgniter 4 (CI4) framework in the development of the IT inventory management system[cite: 21].</li>
-            <li>Developed the IT Inventory Management website, encompassing the management of approximately 9,000 PC parts and a CPU assembly system to ensure real-time data accuracy[cite: 22].</li>
-            <li>Created a refurbishment system for users in the refurbishment warehouse, managing data of up to 70,000 items[cite: 24].</li>
-            <li>Facilitated the scanning of damaged goods API which responds within 0.5 seconds due to query optimization and database indexing[cite: 24].</li>
-            <li>Assisted the mentor in debugging and testing new features that simplify component replacement and assembly[cite: 25].</li>
+            <li>Developed the IT Inventory Management website using CodeIgniter 4 (CI4), encompassing the management of approximately 9,000 PC parts and a CPU assembly system to ensure real-time data accuracy.</li>
+            <li>Created a refurbishment system for users in the refurbishment warehouse, managing data of up to 70,000 items.</li>
+            <li>Facilitated the scanning of damaged goods API which responds within 0.5 seconds due to query optimization and database indexing.</li>
         </ul>
 
-        <h3>Data Scientist Intern | Bappeda Kabupaten Pohuwato [cite: 26]</h3>
-        <p class="date">September 2024 - December 2024 [cite: 27]</p>
+        <h3>Data Scientist Intern | Bappeda Kabupaten Pohuwato</h3>
+        <p class="date">September 2024 - December 2024</p>
         <ul>
-            <li>Created API documentation using Swagger to facilitate data retrieval from regional BPS[cite: 28].</li>
-            <li>Developed the initially basic Gemini model, focusing on analytical context using BPS data from dozens of OPDs and around 80 tables[cite: 29].</li>
-            <li>Implemented Retrieval-Augmented Generation (RAG) techniques through prompt engineering to enhance the performance of the chatbot model[cite: 30].</li>
-            <li>Produced a more responsive and informative chatbot model that enables users to gain insights from processed data[cite: 31].</li>
+            <li>Created API documentation using Swagger to facilitate data retrieval from regional BPS.</li>
+            <li>Developed a Gemini model chatbot focusing on analytical context using BPS data from dozens of OPDs and around 80 tables.</li>
+            <li>Implemented Retrieval-Augmented Generation (RAG) techniques through prompt engineering to enhance the chatbot's performance and responsiveness.</li>
         </ul>
     </section>
 
     <section>
-        <h2>🚀 Project Experiences</h2>
-        <h3>Supply Chain Delivery Optimization: Reducing Late Risk & Operational Inefficiency [cite: 33]</h3>
-        <p class="date">January 2026 - February 2026 [cite: 33]</p>
-        <ul>
-            <li>Analyzed delivery data to address extreme late shipments, targeting a reduction of 54.83% of late deliveries threatening $3.2 million in revenue[cite: 33].</li>
-            <li>Generated recommendations for reducing delivery delays at zero cost through realization of expected delivery schedules[cite: 34].</li>
-            <li>Utilized Python for Exploratory Data Analysis (EDA) and data cleaning, followed by Tableau for visualization and analysis[cite: 35].</li>
-            <li>Applied EDA methodology to identify patterns and provide actionable insights into delivery issues[cite: 36].</li>
-        </ul>
+        <h2>Technical Skills</h2>
+        <div class="tools-grid">
+            <div class="tool-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python Logo">
+                <span>Python</span>
+            </div>
+            <div class="tool-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="SQL Logo">
+                <span>SQL</span>
+            </div>
+            <div class="tool-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png" alt="Tableau Logo">
+                <span>Tableau</span>
+            </div>
+            <div class="tool-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI Logo">
+                <span>Power BI</span>
+            </div>
+            <div class="tool-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg" alt="Excel Logo">
+                <span>Excel / Spreadsheet</span>
+            </div>
+        </div>
     </section>
 
     <section>
-        <h2>🎓 Education</h2>
+        <h2>Education & Certifications</h2>
         <ul>
-            <li><strong>Universitas Multimedia Nusantara</strong> [cite: 6] (August 2021 - August 2025) [cite: 12] - Bachelor of Computer Science[cite: 8]. GPA: 3.39/4.00[cite: 7]. Final Project: English Premier League Final Results Prediction Using LSTM Algorithm[cite: 9].</li>
-            <li><strong>RevoU</strong> [cite: 10] (October 2025 - February 2026) [cite: 13] - Full-stack Data Analytics[cite: 11]. Performed end to end data analysis using SQL, Spreadsheet, Python, and visualization tools[cite: 14].</li>
-            <li><strong>Celerates</strong> [cite: 15] (February 2024 - June 2026) [cite: 16] - Data Scientist Basic[cite: 17]. Learned ETL with Pentaho, statistical data processing using Python, machine learning modeling, and visualization with Tableau[cite: 18].</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>🛠️ Skills</h2>
-        <ul class="skills-list">
-            <li>SQL [cite: 38]</li>
-            <li>Python [cite: 38]</li>
-            <li>Tableau [cite: 38]</li>
-            <li>Power BI [cite: 38]</li>
-            <li>Excel [cite: 38]</li>
-            <li>Spreadsheet [cite: 38]</li>
-            <li>Analytical Thinking [cite: 38]</li>
-            <li>Problem-Solving [cite: 38]</li>
-            <li>Team Collaboration [cite: 38]</li>
-            <li>Communication [cite: 38]</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>📜 Certifications</h2>
-        <ul>
-            <li><strong>Full-Stack Data Analytics Program</strong> - Issued by RevoU [cite: 40] (February 7, 2026) [cite: 43].</li>
-            <li><strong>TOEIC - Listening and Reading</strong> - Issued by Internal Test Center [cite: 41] (August 16, 2025) [cite: 43].</li>
-            <li><strong>Celerates Acceleration Program - Data Scientist Basics</strong> - Issued by Celerates [cite: 42] (June 30, 2024) [cite: 44].</li>
+            <li><strong>Universitas Multimedia Nusantara</strong> (Aug 2021 - Aug 2025) - Bachelor of Computer Science. GPA: 3.39/4.00.<br><em>Final Project: English Premier League Final Results Prediction Using LSTM Algorithm.</em></li>
+            <li><strong>RevoU</strong> (Oct 2025 - Feb 2026) - Full-Stack Data Analytics Program.</li>
+            <li><strong>Celerates</strong> (Feb 2024 - Jun 2026) - Data Scientist Basics Acceleration Program.</li>
+            <li><strong>TOEIC - Listening and Reading</strong> - Issued by Internal Test Center (Aug 2025).</li>
         </ul>
     </section>
 
